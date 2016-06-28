@@ -1,0 +1,14 @@
+Parallel backends:
+
+By default, R will not take advantage of all the cores available on a computer. 
+In order to execute code in parallel, you have to first make the desired number of cores available to R by registering a ’parallel backend’, 
+which effectively creates a cluster to which computations can be sent. 
+Fortunately there are a number of packages that will handle the nitty-gritty details of this process for you:                                               
+• doMC (built on multicore, works for unix-alikes)
+• doSNOW (built on snow, works for Windows)
+• doParallel (built on parallel, works for both)
+
+The "doParallel" package is essentially a merger of multicore and snow, and automatically uses the appropriate tool for your system, so I would recommend sticking with that.
+
+
+*** From "Introduction to parallel computing in R, Clint Leach, April 10, 2014"
