@@ -16,7 +16,11 @@ registerDoParallel(cluster)
 # For nested parallel, you have to load "foreach" package into each parrelel worker(core)
 result <- foreach(i = "...", .combine = "...", .packages = "foreach") %dopar{
   foreach(j = "...") %do% {
-    tryCatch(Fun(), error = function(e){"error-handleer-code"}) 
+    tryCatch(Fun(),
+             # Try warning when try Fun(), sometimes should delete this line, because there're some unimportant warnings
+             warning = function(w){"warning-handler-code"},
+             # Try error when try Fun()
+             error = function(e){"error-handleer-code"}) 
   }
 }
 
