@@ -21,7 +21,7 @@ result <- foreach(i = "...", .combine = "...", .packages = "foreach") %dopar{
 }
 
 # Be sure to close the parallel backend, otherwise you can run into problems later
-stopCluster(cl)
+stopCluster(cluster)
 
 
 
