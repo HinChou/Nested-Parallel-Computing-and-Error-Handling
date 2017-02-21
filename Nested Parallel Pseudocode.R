@@ -14,7 +14,7 @@ registerDoParallel(cluster)
 
 # Returns an object, a list by default. This can be changed through the ".combine" option
 # For nested parallel, you have to load "foreach" package into each parrelel worker(core)
-result <- foreach(i = "...", .combine = "...", .packages = "foreach") %dopar{
+result <- foreach(i = "...", .combine = "...", .packages = "foreach") %dopar%{
   foreach(j = "...") %do% {
     tryCatch(Fun(),
              # Try warning when try Fun(), sometimes should delete this line, because there're some unimportant warnings
